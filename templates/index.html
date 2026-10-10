@@ -112,7 +112,7 @@
         <div class="slider" id="hero-slider">
           {% for slide in slides %}
           <article class="slide{% if forloop.first %} active{% endif %}">
-            <img src="{{ slide.image.url }}" alt="{{ slide.alt_text|default:slide.title }}" />
+            <img src="{{ slide.image.url }}" alt="{{ slide.alt_text|default:slide.title }}"/>
             <div class="slide-shade"></div>
             <div class="slide-content container">
               {% if slide.eyebrow %}<span class="eyebrow light">{{ slide.eyebrow }}</span>{% endif %}
@@ -132,7 +132,7 @@
           </button>
           <div class="slider-dots" role="tablist" aria-label="انتخاب اسلاید">
             {% for slide in slides %}
-            <button{% if forloop.first %} class="active"{% endif %} type="button" aria-label="اسلاید {{ forloop.counter }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"></button>
+            <button {% if forloop.first %} class="active"{% endif %} type="button" aria-label="اسلاید {{ forloop.counter }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"></button>
             {% endfor %}
           </div>
           <div class="slide-counter" aria-hidden="true"><span id="slide-number">1</span><i></i><span id="slide-total">{{ slides|length }}</span></div>
@@ -297,6 +297,14 @@
       <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 15 7-7 7 7" /></svg>
     </button>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- اینجا مال منه-->
+     <div>
+      {% for i in saina%}
+      <img src="{{ i.image.url}}" alt="saina">
+      {% endfor %}
+     </div>
+    
 
     <script defer src="{% static 'js/script.js' %}"></script>
   </body>

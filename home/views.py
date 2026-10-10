@@ -16,7 +16,12 @@ from .models import Product, Slide
 
 
 def home(request):
-    return render(request, "index.html", {
+    return render(request=request, template_name="index.html", context={
         "slides": Slide.objects.filter(is_active=True),
         "products": Product.objects.filter(is_active=True, is_featured=True).select_related("category"),
+    })
+
+def home2(request):
+    return render(request=request, template_name="index.html", context={
+        "saina": Slide.objects.filter(id=1),
     })
